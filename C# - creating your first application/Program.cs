@@ -21,6 +21,14 @@ void showOptions()
     Console.WriteLine("type 3 to review a band");
     Console.WriteLine("type 4 to show average of indicators");
     Console.WriteLine("type -1 to exit");
+
+    Console.Write("\ntype your option: ");
+    string option = Console.ReadLine()!;
+    int numberOption = int.Parse(option);
+    if (numberOption == 1)
+    {
+
+    }
 }
 
 
