@@ -69,9 +69,15 @@ void CreateBand()
 void ShowBand()
 {
     Console.Clear();
-    for(int i = 0; i < listBand.Count; i++)
+
+    //for(int i = 0; i < listBand.Count; i++)
+    //{
+    //    Console.WriteLine($"Band : {listBand[i]}");
+    //}
+
+    foreach (string item in listBand)
     {
-        Console.WriteLine($"Band : {listBand[i]}");
+        Console.WriteLine($"Band : {item}");
     }
 
     Console.WriteLine("type to go back to menu");
