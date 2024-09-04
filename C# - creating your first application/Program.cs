@@ -31,7 +31,7 @@ void showOptions()
     switch (numberOption)
     {
         case 1:
-            Console.WriteLine("");
+            CreateBand();
             break;
         case 2:
             Console.WriteLine("");
@@ -52,6 +52,21 @@ void showOptions()
     }
 }
 
+void CreateBand()
+{
+    Console.Clear();
+    Console.Write("type the name of the band : ");
+    string name = Console.ReadLine();
+    Console.WriteLine($"{name} was create with sucess");
+    Thread.Sleep(2000);
+    Console.Clear();
+    showOptions();
+}
+
+showMessage();
+showOptions();
+
+#region Others
 
 //showMessage();
 //showOptions();
@@ -68,15 +83,41 @@ void showOptions()
 
 //Console.WriteLine(name + lastName);
 
-int average = 5;
-if (average >= 5)
-{
-    Console.WriteLine("teste");
-}
+//int average = 5;
+//if (average >= 5)
+//{
+//    Console.WriteLine("teste");
+//}
 
-List<string> langueges = new List<string> { "C#", "Java", "JavaScript" };
+//List<string> langueges = new List<string> { "C#", "Java", "JavaScript" };
 
-Console.WriteLine(langueges[2]);
+//Console.WriteLine(langueges[2]);
 
-int posicao = int.Parse(Console.ReadLine());
-Console.WriteLine(langueges[posicao]);
+//int posicao = int.Parse(Console.ReadLine());
+//Console.WriteLine(langueges[posicao]);
+
+//Random random = new Random();
+//int number = random.Next(1, 101);
+
+//do
+//{
+//    Console.Write("Digite um número entre 1 e 100: ");
+//    int guess = int.Parse(Console.ReadLine());
+
+//    if (guess == number)
+//    {
+//        Console.WriteLine("Parabéns! Você acertou o número.");
+//        break;
+//    }
+//    else if (guess < number)
+//    {
+//        Console.WriteLine("O número é maior.");
+//    }
+//    else
+//    {
+//        Console.WriteLine("O número é menor.");
+//    }
+
+//} while (true);
+
+#endregion
