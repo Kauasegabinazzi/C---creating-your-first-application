@@ -25,9 +25,28 @@ void showOptions()
     Console.Write("\ntype your option: ");
     string option = Console.ReadLine()!;
     int numberOption = int.Parse(option);
-    if (numberOption == 1)
-    {
 
+    switch (numberOption)
+    {
+        case 1:
+            Console.WriteLine("");
+            break;
+        case 2:
+            Console.WriteLine("");
+            break;
+
+        case 3:
+            Console.WriteLine("");
+            break;
+
+        case 4:
+            Console.WriteLine("");
+            break;
+        case -1:
+            Console.WriteLine("");
+            break;
+        default:
+            break;
     }
 }
 
