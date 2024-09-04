@@ -16,6 +16,8 @@ void showMessage()
     Console.WriteLine(message);
 }
 
+List<string> listBand = new List<string> { "link park", "Nirvana"};
+
 void showOptions()
 {
     Console.WriteLine("\ntype 1 to register a new band");
@@ -34,7 +36,7 @@ void showOptions()
             CreateBand();
             break;
         case 2:
-            Console.WriteLine("");
+            ShowBand();
             break;
 
         case 3:
@@ -57,8 +59,23 @@ void CreateBand()
     Console.Clear();
     Console.Write("type the name of the band : ");
     string name = Console.ReadLine();
+    listBand.Add(name);
     Console.WriteLine($"{name} was create with sucess");
     Thread.Sleep(2000);
+    Console.Clear();
+    showOptions();
+}
+
+void ShowBand()
+{
+    Console.Clear();
+    for(int i = 0; i < listBand.Count; i++)
+    {
+        Console.WriteLine($"Band : {listBand[i]}");
+    }
+
+    Console.WriteLine("type to go back to menu");
+    Console.ReadKey();
     Console.Clear();
     showOptions();
 }
