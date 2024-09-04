@@ -1,4 +1,6 @@
 ﻿
+using System.Xml.Linq;
+
 void showMessage()
 {
     string message = "Wellcome";
@@ -51,8 +53,12 @@ void showOptions()
 }
 
 
-showMessage();
-showOptions();
+//showMessage();
+//showOptions();
+
+//Console.WriteLine("Qual é o seu nome?");
+//string nome = Console.ReadLine();
+//Console.WriteLine("Olá, {0}!", nome);
 
 //string course = "C#: creating your first application";
 //Console.WriteLine(course);
@@ -61,3 +67,16 @@ showOptions();
 //string lastName = "Fernandes";
 
 //Console.WriteLine(name + lastName);
+
+int average = 5;
+if (average >= 5)
+{
+    Console.WriteLine("teste");
+}
+
+List<string> langueges = new List<string> { "C#", "Java", "JavaScript" };
+
+Console.WriteLine(langueges[2]);
+
+int posicao = int.Parse(Console.ReadLine());
+Console.WriteLine(langueges[posicao]);
