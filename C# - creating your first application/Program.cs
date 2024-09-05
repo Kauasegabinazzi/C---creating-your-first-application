@@ -86,8 +86,8 @@ void ShowBand()
     showOptions();
 }
 
-showMessage();
-showOptions();
+//showMessage();
+//showOptions();
 
 #region Others
 
@@ -144,3 +144,13 @@ showOptions();
 //} while (true);
 
 #endregion
+
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+foreach (int number in numbers)
+{
+    if (number % 2 == 0)
+    {
+        Console.WriteLine(number);
+    }
+}
