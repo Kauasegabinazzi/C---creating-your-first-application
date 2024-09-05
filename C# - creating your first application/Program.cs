@@ -57,6 +57,7 @@ void showOptions()
 void CreateBand()
 {
     Console.Clear();
+    ShowTitleOption("New Band");
     Console.Write("type the name of the band : ");
     string name = Console.ReadLine();
     listBand.Add(name);
@@ -69,6 +70,8 @@ void CreateBand()
 void ShowBand()
 {
     Console.Clear();
+
+    ShowTitleOption("Show Bands");
 
     //for(int i = 0; i < listBand.Count; i++)
     //{
@@ -86,8 +89,17 @@ void ShowBand()
     showOptions();
 }
 
-//showMessage();
-//showOptions();
+void ShowTitleOption(string title)
+{
+    int quantity = title.Length;
+    string asterisks = string.Empty.PadLeft(quantity, '*');
+    Console.WriteLine(asterisks);
+    Console.WriteLine(title);
+    Console.WriteLine(asterisks + "\n");
+}
+
+showMessage();
+showOptions();
 
 #region Others
 
@@ -143,14 +155,14 @@ void ShowBand()
 
 //} while (true);
 
+//List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//foreach (int number in numbers)
+//{
+//    if (number % 2 == 0)
+//    {
+//        Console.WriteLine(number);
+//    }
+//}
+
 #endregion
-
-List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-foreach (int number in numbers)
-{
-    if (number % 2 == 0)
-    {
-        Console.WriteLine(number);
-    }
-}
