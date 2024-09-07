@@ -17,7 +17,7 @@ void showMessage()
 }
 
 Dictionary<string, List<int>> createdBands = new Dictionary<string, List<int>>();
-createdBands.Add("link park", new List<int> { 10, 8, 9 });
+createdBands.Add("linkin park", new List<int> { 10, 8, 9 });
 createdBands.Add("Nirvana", new List<int> { 6, 7, 9 });
 
 void showOptions()
@@ -61,7 +61,7 @@ void CreateBand()
     Console.Clear();
     ShowTitleOption("New Band");
     Console.Write("type the name of the band : ");
-    string name = Console.ReadLine();
+    string name = Console.ReadLine()!;
     createdBands.Add(name, new List<int>());
     Console.WriteLine($"{name} was create with sucess");
     Thread.Sleep(2000);
@@ -104,11 +104,17 @@ void EvaluateBand()
 {
     Console.Clear();
     ShowTitleOption("To evalueate a band");
-    Console.Write("Type the name of the band you want evalueate : ");
-    string name = Console.ReadLine();
+    Console.Write("Type the name of the band you want evaluate : ");
+    string name = Console.ReadLine()!;
     if (createdBands.ContainsKey(name))
     {
-
+        Console.Write($"What is the score of {name} ? ");
+        int score = int.Parse(Console.ReadLine()!);
+        createdBands[name].Add(score);
+        Console.WriteLine("\nSucess");
+        Thread.Sleep(4000);
+        Console.Clear();
+        showOptions();
     }
     else
     {
