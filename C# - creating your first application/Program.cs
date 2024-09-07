@@ -195,78 +195,92 @@ void EvaluateBand()
 
 #endregion
 
-Dictionary<string, List<double>> scores = new Dictionary<string, List<double>>();
+#region Dictionary 
 
-scores["Jorge"] = new List<double> { 6.5, 7.5, 5.0 };
-scores["claudio"] = new List<double> { 9.0, 100.0, 6.5 };
+//Dictionary<string, List<double>> scores = new Dictionary<string, List<double>>();
 
-foreach (var student in scores)
-{
-    double sum = 0;
-    for (int i = 0; i < student.Value.Count; i++)
-    {
-        sum += student.Value[i];
-    }
-    double average = sum / student.Value.Count;
-    Console.WriteLine($"average of {student.Key}: {average}");
-}
+//scores["Jorge"] = new List<double> { 6.5, 7.5, 5.0 };
+//scores["claudio"] = new List<double> { 9.0, 100.0, 6.5 };
 
-Dictionary<string, int> stock = new Dictionary<string, int>
-{
-    { "shirts", 20 },
-    { "cellphones", 100 },
-    { "playstation4", 70 },
+//foreach (var student in scores)
+//{
+//    double sum = 0;
+//    for (int i = 0; i < student.Value.Count; i++)
+//    {
+//        sum += student.Value[i];
+//    }
+//    double average = sum / student.Value.Count;
+//    Console.WriteLine($"average of {student.Key}: {average}");
+//}
+
+//Dictionary<string, int> stock = new Dictionary<string, int>
+//{
+//    { "shirts", 20 },
+//    { "cellphones", 100 },
+//    { "playstation4", 70 },
+//};
+
+//string product = "cellphones";
+
+//if (stock.ContainsKey(product))
+//{
+//    Console.WriteLine($"the quantity of {product} we have in stock is : {stock[product]} unity.");
+//}
+//else
+//{
+//    Console.WriteLine("not find");
+//}
+
+//Dictionary<string, string> questionsAnswears = new Dictionary<string, string>
+//{
+//    { "how much is 1 + 2 ? ", "3" },
+//};
+
+//int score = 0;
+
+//foreach (var question in questionsAnswears)
+//{
+//    Console.WriteLine(question.Key);
+//    Console.Write("your answear: ");
+//    string response = Console.ReadLine()!;
+
+//    if (response.ToLower() == question.Value.ToLower())
+//    {
+//        Console.WriteLine("That's right!\n");
+//        score++;
+//    }
+//    else
+//    {
+//        Console.WriteLine($"that's wrong. the answear is : {question.Value}\n");
+//    }
+//}
+
+//Console.WriteLine($"Score: {score} of {questionsAnswears.Count}");
+
+//Dictionary<string, string> users = new Dictionary<string, string>
+//{
+//    { "user", "123456" },
+//};
+
+//Console.Write("your user: ");
+//string name = Console.ReadLine()!;
+//Console.Write("your password: ");
+//string password = Console.ReadLine()!;
+
+
+//if (users.ContainsKey(name) && users[name] == password)
+//    Console.WriteLine("Sucess login!");
+//else
+//    Console.WriteLine("thats wrong");
+#endregion
+
+Dictionary<string, List<int>> sales = new Dictionary<string, List<int>> {
+    { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
+    { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
+    { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
+    { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
+    { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
 };
 
-string product = "cellphones";
-
-if (stock.ContainsKey(product))
-{
-    Console.WriteLine($"the quantity of {product} we have in stock is : {stock[product]} unity.");
-}
-else
-{
-    Console.WriteLine("not find");
-}
-
-Dictionary<string, string> questionsAnswears = new Dictionary<string, string>
-{
-    { "how much is 1 + 2 ? ", "3" },
-};
-
-int score = 0;
-
-foreach (var question in questionsAnswears)
-{
-    Console.WriteLine(question.Key);
-    Console.Write("your answear: ");
-    string response = Console.ReadLine()!;
-
-    if (response.ToLower() == question.Value.ToLower())
-    {
-        Console.WriteLine("That's right!\n");
-        score++;
-    }
-    else
-    {
-        Console.WriteLine($"that's wrong. the answear is : {question.Value}\n");
-    }
-}
-
-Console.WriteLine($"Score: {score} of {questionsAnswears.Count}");
-
-Dictionary<string, string> users = new Dictionary<string, string>
-{
-    { "user", "123456" },
-};
-
-Console.Write("your user: ");
-string name = Console.ReadLine()!;
-Console.Write("your password: ");
-string password = Console.ReadLine()!;
-
-
-if (users.ContainsKey(name) && users[name] == password)
-    Console.WriteLine("Sucess login!");
-else
-    Console.WriteLine("thats wrong");
+double average = sales["Bugatti Veyron"].Average();
+Console.WriteLine("the average of Bugatti Veyron is : " + average);
