@@ -17,7 +17,7 @@ void showMessage()
 }
 
 Dictionary<string, List<int>> createdBands = new Dictionary<string, List<int>>();
-createdBands.Add("link park", new List<int> { 10,8,9});
+createdBands.Add("link park", new List<int> { 10, 8, 9 });
 createdBands.Add("Nirvana", new List<int> { 6, 7, 9 });
 
 void showOptions()
@@ -42,7 +42,7 @@ void showOptions()
             break;
 
         case 3:
-            Console.WriteLine("");
+            EvaluateBand();
             break;
 
         case 4:
@@ -98,6 +98,26 @@ void ShowTitleOption(string title)
     Console.WriteLine(asterisks);
     Console.WriteLine(title);
     Console.WriteLine(asterisks + "\n");
+}
+
+void EvaluateBand()
+{
+    Console.Clear();
+    ShowTitleOption("To evalueate a band");
+    Console.Write("Type the name of the band you want evalueate : ");
+    string name = Console.ReadLine();
+    if (createdBands.ContainsKey(name))
+    {
+
+    }
+    else
+    {
+        Console.WriteLine("Not find");
+        Console.WriteLine("type to go back to menu");
+        Console.ReadKey();
+        Console.Clear();
+        showOptions();
+    }
 }
 
 showMessage();
