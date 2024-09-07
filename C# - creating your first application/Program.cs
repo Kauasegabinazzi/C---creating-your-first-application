@@ -255,3 +255,18 @@ foreach (var question in questionsAnswears)
 
 Console.WriteLine($"Score: {score} of {questionsAnswears.Count}");
 
+Dictionary<string, string> users = new Dictionary<string, string>
+{
+    { "user", "123456" },
+};
+
+Console.Write("your user: ");
+string name = Console.ReadLine()!;
+Console.Write("your password: ");
+string password = Console.ReadLine()!;
+
+
+if (users.ContainsKey(name) && users[name] == password)
+    Console.WriteLine("Sucess login!");
+else
+    Console.WriteLine("thats wrong");
