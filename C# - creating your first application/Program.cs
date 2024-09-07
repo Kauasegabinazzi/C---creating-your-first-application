@@ -210,3 +210,21 @@ foreach (var student in scores)
     double average = sum / student.Value.Count;
     Console.WriteLine($"average of {student.Key}: {average}");
 }
+
+Dictionary<string, int> stock = new Dictionary<string, int>
+{
+    { "shirts", 20 },
+    { "cellphones", 100 },
+    { "playstation4", 70 },
+};
+
+string product = "cellphones";
+
+if (stock.ContainsKey(product))
+{
+    Console.WriteLine($"the quantity of {product} we have in stock is : {stock[product]} unity.");
+}
+else
+{
+    Console.WriteLine("not find");
+}
