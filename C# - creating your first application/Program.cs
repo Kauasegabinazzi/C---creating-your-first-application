@@ -228,3 +228,30 @@ else
 {
     Console.WriteLine("not find");
 }
+
+Dictionary<string, string> questionsAnswears = new Dictionary<string, string>
+{
+    { "how much is 1 + 2 ? ", "3" },
+};
+
+int score = 0;
+
+foreach (var question in questionsAnswears)
+{
+    Console.WriteLine(question.Key);
+    Console.Write("your answear: ");
+    string response = Console.ReadLine()!;
+
+    if (response.ToLower() == question.Value.ToLower())
+    {
+        Console.WriteLine("That's right!\n");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine($"that's wrong. the answear is : {question.Value}\n");
+    }
+}
+
+Console.WriteLine($"Score: {score} of {questionsAnswears.Count}");
+
