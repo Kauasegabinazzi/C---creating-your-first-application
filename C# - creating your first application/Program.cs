@@ -16,7 +16,9 @@ void showMessage()
     Console.WriteLine(message);
 }
 
-List<string> listBand = new List<string> { "link park", "Nirvana"};
+Dictionary<string, List<int>> createdBands = new Dictionary<string, List<int>>();
+createdBands.Add("link park", new List<int> { 10,8,9});
+createdBands.Add("Nirvana", new List<int> { 6, 7, 9 });
 
 void showOptions()
 {
@@ -60,7 +62,7 @@ void CreateBand()
     ShowTitleOption("New Band");
     Console.Write("type the name of the band : ");
     string name = Console.ReadLine();
-    listBand.Add(name);
+    createdBands.Add(name, new List<int>());
     Console.WriteLine($"{name} was create with sucess");
     Thread.Sleep(2000);
     Console.Clear();
@@ -78,7 +80,7 @@ void ShowBand()
     //    Console.WriteLine($"Band : {listBand[i]}");
     //}
 
-    foreach (string item in listBand)
+    foreach (string item in createdBands.Keys)
     {
         Console.WriteLine($"Band : {item}");
     }
