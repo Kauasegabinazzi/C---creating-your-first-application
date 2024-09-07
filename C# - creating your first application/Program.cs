@@ -126,8 +126,8 @@ void EvaluateBand()
     }
 }
 
-showMessage();
-showOptions();
+//showMessage();
+//showOptions();
 
 #region Others
 
@@ -194,3 +194,19 @@ showOptions();
 //}
 
 #endregion
+
+Dictionary<string, List<double>> scores = new Dictionary<string, List<double>>();
+
+scores["Jorge"] = new List<double> { 6.5, 7.5, 5.0 };
+scores["claudio"] = new List<double> { 9.0, 100.0, 6.5 };
+
+foreach (var student in scores)
+{
+    double sum = 0;
+    for (int i = 0; i < student.Value.Count; i++)
+    {
+        sum += student.Value[i];
+    }
+    double average = sum / student.Value.Count;
+    Console.WriteLine($"average of {student.Key}: {average}");
+}
