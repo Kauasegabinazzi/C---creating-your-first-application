@@ -46,7 +46,7 @@ void showOptions()
             break;
 
         case 4:
-            Console.WriteLine("");
+            AverageBand();
             break;
         case -1:
             Console.WriteLine("");
@@ -54,6 +54,33 @@ void showOptions()
         default:
             break;
     }
+}
+
+void AverageBand()
+{
+    Console.Clear();
+    ShowTitleOption("show average of the band");
+    Console.Write("type the name of the band : ");
+    string name = Console.ReadLine()!;
+
+    if (createdBands.ContainsKey(name))
+    {
+        List<int> score = createdBands[name];
+        Console.WriteLine($"\nthe Average is {score.Average()}");
+        Console.WriteLine("type to go back to menu");
+        Console.ReadKey();
+        Console.Clear();
+        showOptions();
+    }
+    else
+    {
+        Console.WriteLine("Not find");
+        Console.WriteLine("type to go back to menu");
+        Console.ReadKey();
+        Console.Clear();
+        showOptions();
+    }
+
 }
 
 void CreateBand()
@@ -126,8 +153,8 @@ void EvaluateBand()
     }
 }
 
-//showMessage();
-//showOptions();
+showMessage();
+showOptions();
 
 #region Others
 
@@ -274,13 +301,13 @@ void EvaluateBand()
 //    Console.WriteLine("thats wrong");
 #endregion
 
-Dictionary<string, List<int>> sales = new Dictionary<string, List<int>> {
-    { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
-    { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
-    { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
-    { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
-    { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
-};
+//Dictionary<string, List<int>> sales = new Dictionary<string, List<int>> {
+//    { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
+//    { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
+//    { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
+//    { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
+//    { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
+//};
 
-double average = sales["Bugatti Veyron"].Average();
-Console.WriteLine("the average of Bugatti Veyron is : " + average);
+//double average = sales["Bugatti Veyron"].Average();
+//Console.WriteLine("the average of Bugatti Veyron is : " + average);
